@@ -6,17 +6,20 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { AlfredoComponent } from './alfredo/alfredo.component';
 import { AndreaComponent } from './andrea/andrea.component';
-
+import { FormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     ServersComponent,
     AlfredoComponent,
-    AndreaComponent
+    AndreaComponent,
+    UsersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
