@@ -1,1 +1,33 @@
-<p>users works!</p>
+<div class="container-fluid">
+    <h1>This is the Users component</h1>
+</div>
+<div class="container-fluid">
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- this is the traditional way-->
+        <!-- <input type="text" class="form-control" (input)="onUpdatedServerName($event)"> -->
+
+        <!-- this is the two directions way with angular-->
+
+        <label>Type here the user name:</label>
+        <input type="text" class="form-control" (input)="onUpdatedUserName($event)" [(ngModel)]="userName">
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary" [disabled]="!enabledButton" (click)="cleanUserName()">Save username</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <label>The typed username is:</label>
+        <div class="col-xs-14">
+            <h4>{{ userName }}</h4>
+        </div>
+
+    </div>
+</div>
