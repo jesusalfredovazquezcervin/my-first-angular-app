@@ -1,9 +1,35 @@
-<h3>Server id {{ serverID }} is {{ getServerStatus() }} </h3>
+<div class="container-fluid">
+    <h1>This is the server component</h1>
+</div>
+<div class="container-fluid">
+    <h3>Server id {{ serverID }} is {{ getServerStatus() }} </h3>
+</div>
+
 <div class="container-fluid">
     <div class="row">
+        <!-- this is the traditional way-->
+        <!-- <input type="text" class="form-control" (input)="onUpdatedServerName($event)"> -->
+
+        <!-- this is the two directions way with angular-->
+        <H3>Type here the name of the new server</H3>
+        <input type="text" class="form-control" [(ngModel)]="serverName">
+
+    </div>
+
+    <div class="row">
         <div class="col-xs-12">
-            <button type="button" class="btn btn-primary" [disabled]="!allowNewServer">Accept</button>
+            <button type="button" class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreatedServer()">Create Server</button>
         </div>
 
+    </div>
+    <div class="row">
+        <div class="col-xs-14">
+            <h4>{{ serverCreationStatus }}:</h4>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <!-- <p>{{ serverName }}</p> -->
     </div>
 </div>
