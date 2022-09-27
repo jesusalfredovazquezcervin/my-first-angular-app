@@ -4,6 +4,21 @@ import  { Component } from '@angular/core';
     templateUrl: './server.component.html'
 })
 export class ServerComponent {
+    serverID: number  = 10;
+    serverStatus: string  = "Online";
+    allowNewServer = false;
+    
+    constructor(){
+        setTimeout(() =>{
+            this.allowNewServer = true;
+        }, 3000);
+    }
+
+    getServerStatus() {
+        return this.serverStatus;
+
+    } 
+
     
 
 }
