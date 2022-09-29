@@ -31,3 +31,37 @@
 
     </div>
 </div>
+
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="jumbotron">
+                <h2 class="display-3">Practica 3 - Lecture 43</h2>
+                <p class="lead">Practicing Directives</p>
+
+                <p class="lead">
+                    <button class="btn btn-primary btn-lg" (click)="onTogglePassword()">Display Password</button>
+                </p>
+                <hr class="my-2">
+                <!-- <p>Secret password: "BOSCO"</p> -->
+                <div *ngIf="!passwordHidden">
+                    <p> The pasword is -> {{password}} </p>
+                    <hr class="my-2">
+
+                </div>
+
+                <p [ngStyle]="{backgroundColor:  getColor(i)}" [ngClass]="{whiteText: i>=5}" *ngFor="let log of logButtonClicks; index as i; ">
+
+                    {{logButtonClicks[i]}}
+                </p>
+                <!-- employees.forEach((item, key) => console.log(item)); -->
+
+                <!--  
+    <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'Online'}">
+-->
+
+            </div>
+        </div>
+    </div>
+</div>

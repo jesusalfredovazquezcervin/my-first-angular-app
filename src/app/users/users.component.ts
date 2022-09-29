@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   userName: string = ''; 
   enabledButton = false;
+  passwordHidden = true;
+  password = 'BOSCO';
+  //logButtonClicks = new  Map<number, string>();
+  logButtonClicks= [''];
+  i=0;
 
   constructor() { }
 
@@ -40,6 +45,22 @@ export class UsersComponent implements OnInit {
     }, 100);
   }
   
+  onTogglePassword(){
+    //console.log('The hidden password is -> ' + this.passwordHidden);
+    this.passwordHidden = !this.passwordHidden;
+    //console.log('The hidden password is -> ' + this.passwordHidden);
+    this.i += 1;
+    const now = new Date();
+    //this.logButtonClicks.set( this.i, now.toLocaleDateString() );
+    //employees.forEach((item, key) => console.log(item));
+    //this.logButtonClicks.push(this.i);
+    this.logButtonClicks.push(now.toLocaleString() );
 
-
+  }
+  getColor(i: number){
+    if (i >= 5){
+      return 'cornflowerblue'      ;
+    }
+    return '';
+  }
 }
